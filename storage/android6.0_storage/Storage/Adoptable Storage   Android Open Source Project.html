@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://source.android.com/devices/storage/adoptable.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="Description" content="Android has always supported external storage accessories (such as SD cards), but these accessories were historically limited to simple file storage, due to their expected impermanence and the minimal data protection offered to traditional external storage…">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://source.android.com/favicon.ico">
+<title>Adoptable Storage | Android Open Source Project</title>
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,mediumitalic,bold" title="roboto">
+<link href="./Adoptable Storage   Android Open Source Project_files/default.css" rel="stylesheet" type="text/css">
+
+
+
+<!-- JAVASCRIPT -->
+<script src="./Adoptable Storage   Android Open Source Project_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Adoptable Storage   Android Open Source Project_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./Adoptable Storage   Android Open Source Project_files/ga.js"></script><script src="./Adoptable Storage   Android Open Source Project_files/jsapi" type="text/javascript"></script>
+<script src="./Adoptable Storage   Android Open Source Project_files/android_3p-bundle.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var toRoot = "/";
+  
+  var devsite = false;
+  
+</script>
+<script src="./Adoptable Storage   Android Open Source Project_files/docs.js" type="text/javascript"></script>
+
+<script src="./Adoptable Storage   Android Open Source Project_files/navtree_data.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="./Adoptable Storage   Android Open Source Project_files/api.js"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-45455297-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body class="gc-documentation 
+  " itemscope="" itemtype="http://schema.org/Article">
+<a name="top"></a>
+
+  
+    <!-- Header -->
+    <div id="header">
+        <div class="wrap" id="header-wrap">
+          <div class="col-3 saclogo">
+          <a href="https://source.android.com/index.html">
+            <img src="./Adoptable Storage   Android Open Source Project_files/sac_logo.png" srcset="/assets/images/sac_logo@2x.png 2x" width="123" height="25" alt="Android Open Source Project">
+          </a>
+          </div>
+            <ul class="nav-x col-9">
+                <li class="source">
+                  <a href="https://source.android.com/source/index.html">Source</a></li>
+                <li class="devices"><a href="https://source.android.com/devices/index.html" class="selected">Devices</a></li>
+                <li class="security"><a href="https://source.android.com/security/index.html">Security</a></li>
+                <li class="compatibility last"><a href="https://source.android.com/compatibility/index.html">Compatibility</a></li>
+            </ul>
+            <!-- New Search -->
+            <div class="menu-container">
+            <div class="moremenu">
+    <div id="more-btn"></div>
+  </div>
+  <div class="morehover" id="moremenu">
+    <div class="top"></div>
+    <div class="mid">
+      <div class="header">Android Sites</div>
+      <ul>
+        <li class="active"><a>Android Open Source Project</a></li>
+        <li><a href="http://www.android.com/">Android.com</a></li>
+        <li><a href="http://developer.android.com/">Android Developers</a></li>
+      </ul>
+      <!-- <div class="header">Support</div>
+      <ul>
+        <li><a href="/support.html">Developer Support</a></li>
+      </ul> -->
+      <br class="clearfix">
+    </div>
+    <div class="bottom"></div>
+  </div>
+
+  <div class="search" id="search-container">
+    <div class="search-inner">
+      <div id="search-btn"></div>
+      <div class="left"></div>
+      <form onsubmit="return submit_search()">
+        <input id="search_autocomplete" type="text" value="" autocomplete="off" name="q" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, &#39;/&#39;)" onkeyup="return search_changed(event, false, &#39;/&#39;)">
+      </form>
+      <div class="right"></div>
+        <a class="close hide">close</a>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+  </div>
+  <div id="search_filtered_wrapper">
+    <div id="search_filtered_div" class="no-display">
+        <ul id="search_filtered">
+        </ul>
+    </div>
+  </div>
+
+  </div>
+  <!-- /New Search> -->
+        </div>
+    </div>
+    <!-- /Header -->
+
+  <div id="searchResults" class="wrap" style="display: none;">
+          <h2 id="searchTitle" style="margin-bottom: 0px;">Results</h2><hr>
+          <div id="leftSearchControl" class="search-control">Loading...</div>
+  </div>
+
+  
+  
+  
+    
+  <div class="wrap clearfix" id="body-content">
+    <div class="col-4" id="side-nav" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+      <div id="devdoc-nav" class="scroll-pane" style="height: 661px; overflow: hidden; padding: 0px; width: 220px;">
+
+
+<!--
+    Copyright 2015 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+ 
+
+
+      <div class="jspContainer" style="width: 220px; height: 661px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 220px;"><a class="totop" href="https://source.android.com/devices/storage/adoptable.html#top" data-g-event="left-nav-top">to top</a><ul id="nav" style="width: 216px;">
+  <li class="nav-section expanded">  <!-- Begin nav section, Device Interfaces -->
+    <div class="nav-section-header">
+      <a href="https://source.android.com/devices/index.html">
+        <span class="en">Interfaces</span>
+      </a>
+    </div>
+    <ul style="display: block;">
+  <li class="nav-section">
+  <div class="nav-section-header">
+      <a href="https://source.android.com/devices/accessories/index.html">
+        <span class="en">Accessories</span>
+      </a>
+    </div>
+    <ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/accessories/audio.html">
+            <span class="en">Audio Accessories</span>
+          </a>
+        </div>
+        <ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/accessories/headset/index.html">
+            <span class="en">Headset</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/accessories/headset/specification.html">Specification</a></li>
+          <li><a href="https://source.android.com/devices/accessories/headset/requirements.html">Requirements</a></li>
+          <li><a href="https://source.android.com/devices/accessories/headset/testing.html">Testing</a></li>
+        </ul>
+      </li>
+        </ul>
+      </li>
+  <li class="nav-section">
+  <div class="nav-section-header">
+      <a href="https://source.android.com/devices/accessories/custom.html">
+        <span class="en">Custom Accessories</span>
+      </a>
+    </div>
+    <ul>
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="https://source.android.com/devices/accessories/protocol.html"><span class="en">AOA</span>
+        </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/accessories/aoa2.html">AOA 2.0</a></li>
+          <li><a href="https://source.android.com/devices/accessories/aoa.html">AOA 1.0</a></li>
+        </ul>
+        </li>
+        <div class="nav-section-header"><a href="https://source.android.com/devices/accessories/stylus.html"><span class="en">Stylus</span>
+        </a>
+        </div>
+       </ul>
+     </li>
+    </ul>
+      </li><li class="nav-section">
+      <div class="nav-section-header">
+        <a href="https://source.android.com/devices/audio/index.html">
+          <span class="en">Audio</span>
+        </a>
+      </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/audio/terminology.html">Terminology</a></li>
+          <li><a href="https://source.android.com/devices/audio/implement.html">Implementation</a></li>
+          <li><a href="https://source.android.com/devices/audio/attributes.html">Attributes</a></li>
+          <li><a href="https://source.android.com/devices/audio/warmup.html">Warmup</a></li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="https://source.android.com/devices/audio/latency.html">
+                <span class="en">Latency</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="https://source.android.com/devices/audio/latency_contrib.html">Contributors</a></li>
+              <li><a href="https://source.android.com/devices/audio/latency_design.html">Design</a></li>
+              <li><a href="https://source.android.com/devices/audio/latency_measure.html">Measure</a></li>
+              <li><a href="https://source.android.com/devices/audio/testing_circuit.html">Light Testing Circuit</a></li>
+              <li><a href="https://source.android.com/devices/audio/loopback.html">Audio Loopback Dongle</a></li>
+              <li><a href="https://source.android.com/devices/audio/latency_measurements.html">Measurements</a></li>
+              <li><a href="https://source.android.com/devices/audio/latency_app.html">Applications</a></li>
+            </ul>
+          </li>
+          <li><a href="https://source.android.com/devices/audio/avoiding_pi.html">Priority Inversion</a></li>
+          <li><a href="https://source.android.com/devices/audio/src.html">Sample Rate Conversion</a></li>
+          <li><a href="https://source.android.com/devices/audio/debugging.html">Debugging</a></li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="https://source.android.com/devices/audio/midi.html">
+                <span class="em">MIDI</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="https://source.android.com/devices/audio/midi_test.html">MIDI Test Procedure</a></li>
+            </ul>
+          </li><li><a href="https://source.android.com/devices/audio/usb.html">USB Digital Audio</a></li>
+          <li><a href="https://source.android.com/devices/audio/tv.html">TV Audio</a></li>
+        </ul>
+      </li>
+      <li><a href="https://source.android.com/devices/bluetooth.html">Bluetooth</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/camera/index.html">
+            <span class="en">Camera</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/camera/camera3.html">Camera HAL3</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_requests_hal.html">HAL Subsystem</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_metadata.html">Metadata and Controls</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_3Amodes.html">3A Modes and State</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_crop_reprocess.html">Output and Cropping</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_error_stream.html">Errors and Streams</a></li>
+          <li><a href="https://source.android.com/devices/camera/camera3_requests_methods.html">Request Creation</a></li>
+          <li><a href="https://source.android.com/devices/camera/versioning.html">Version Support</a></li>
+        </ul>
+      </li>
+
+      <li><a href="https://source.android.com/devices/drm.html">DRM</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/graphics/index.html">
+            <span class="en">Graphics</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/graphics/architecture.html">Architecture</a></li>
+          <li><a href="https://source.android.com/devices/graphics/implement.html">Implementation</a></li>
+         <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="https://source.android.com/devices/graphics/testing.html">
+                <span class="en">OpenGL ES Testing</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="https://source.android.com/devices/graphics/build-tests.html">Building test programs</a></li>
+              <li><a href="https://source.android.com/devices/graphics/port-tests.html">Porting the test framework</a></li>
+              <li><a href="https://source.android.com/devices/graphics/run-tests.html">Running the tests</a></li>
+              <li><a href="https://source.android.com/devices/graphics/automate-tests.html">Automating the tests</a></li>
+              <li><a href="https://source.android.com/devices/graphics/test-groups.html">Using special test groups</a></li>
+              <li><a href="https://source.android.com/devices/graphics/cts-integration.html">Integrating with Android CTS</a></li>
+            </ul>
+         </li>
+        </ul> </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/input/index.html">
+            <span class="en">Input</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/input/overview.html">Overview</a></li>
+          <li><a href="https://source.android.com/devices/input/key-layout-files.html">Key Layout Files</a></li>
+          <li><a href="https://source.android.com/devices/input/key-character-map-files.html">Key Character Map Files</a></li>
+          <li><a href="https://source.android.com/devices/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
+          <li><a href="https://source.android.com/devices/input/migration-guide.html">Migration Guide</a></li>
+          <li><a href="https://source.android.com/devices/input/keyboard-devices.html">Keyboard Devices</a></li>
+          <li><a href="https://source.android.com/devices/input/touch-devices.html">Touch Devices</a></li>
+          <li><a href="https://source.android.com/devices/input/diagnostics.html">Diagnostics</a></li>
+          <li><a href="https://source.android.com/devices/input/getevent.html">Getevent</a></li>
+          <li><a href="https://source.android.com/devices/input/validate-keymaps.html">Validate Keymaps</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/media/index.html">
+            <span class="en">Media</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/media/soc.html">SoC Dependencies</a></li>
+          <li><a href="https://source.android.com/devices/media/oem.html">OEM Dependencies</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/sensors/index.html">
+            <span class="en">Sensors</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/sensors/sensor-stack.html">Sensor stack</a></li>
+          <li><a href="https://source.android.com/devices/sensors/report-modes.html">Reporting modes</a></li>
+          <li><a href="https://source.android.com/devices/sensors/suspend-mode.html">Suspend mode</a></li>
+          <li><a href="https://source.android.com/devices/sensors/power-use.html">Power consumption</a></li>
+          <li><a href="https://source.android.com/devices/sensors/interaction.html">Interaction</a></li>
+          <li><a href="https://source.android.com/devices/sensors/hal-interface.html">HAL interface</a></li>
+          <li><a href="https://source.android.com/devices/sensors/batching.html">Batching</a></li>
+          <li><a href="https://source.android.com/devices/sensors/sensor-types.html">Sensor types</a></li>
+          <li><a href="https://source.android.com/devices/sensors/versioning.html">Version deprecation</a></li>
+        </ul>
+      </li>
+      <li class="nav-section expanded">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/storage/index.html">
+            <span class="en">Storage</span>
+          </a>
+        </div>
+        <ul style="display: block;">
+          <li><a href="https://source.android.com/devices/storage/traditional.html">Traditional Storage</a></li>
+          <li class="selected"><a href="./Adoptable Storage   Android Open Source Project_files/Adoptable Storage   Android Open Source Project.html">Adoptable Storage</a></li>
+          <li><a href="https://source.android.com/devices/storage/config.html">Device Configuration</a></li>
+          <li><a href="https://source.android.com/devices/storage/config-example.html">Configuration Examples</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tv/index.html">
+            <span class="en">TV</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tv/HDMI-CEC.html">HDMI-CEC control service</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li> <!-- End nav-section, Device Interfaces-->
+
+
+  <li class="nav-section"> <!--Begin nav-section, Core Technologies-->
+    <div class="nav-section-header">
+      <a href="https://source.android.com/devices/tech/index.html">
+        <span class="en">Core Technologies</span>
+      </a>
+    </div>
+
+    <ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/dalvik/index.html">
+          <span class="en">ART and Dalvik</span></a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/dalvik/dalvik-bytecode.html">Bytecode Format</a></li>
+          <li><a href="https://source.android.com/devices/tech/dalvik/dex-format.html">.Dex Format</a></li>
+          <li><a href="https://source.android.com/devices/tech/dalvik/instruction-formats.html">Instruction Formats</a></li>
+          <li><a href="https://source.android.com/devices/tech/dalvik/constraints.html">Constraints</a></li>
+          <li><a href="https://source.android.com/devices/tech/dalvik/configure.html">Configuration</a></li>
+          <li><a href="https://source.android.com/devices/tech/dalvik/gc-debug.html">Garbage Collection</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+            <a href="https://source.android.com/devices/tech/config/index.html">
+              <span class="en">Configuration</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/config/carrier.html">Carrier Customization</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/filesystem.html">File System</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/kernel.html">Kernel</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/low-ram.html">Low RAM</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/renderer.html">OpenGLRenderer</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/runtime_perms.html">Runtime Permissions</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/uicc.html">UICC</a></li>
+          <li><a href="https://source.android.com/devices/tech/config/voicemail.html">Visual Voicemail</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/datausage/index.html">
+            <span class="en">Data Usage</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/datausage/iface-overview.html">Network interface statistics overview</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/excluding-network-types.html">Excluding Network Types from Data Usage</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/tethering-data.html">Tethering Data</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/usage-cycle-resets-dates.html">Usage Cycle Reset Dates</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/kernel-overview.html">Kernel Overview</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/tags-explained.html">Data Usage Tags Explained</a></li>
+          <li><a href="https://source.android.com/devices/tech/datausage/kernel-changes.html">Kernel Changes</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/debug/index.html">
+            <span class="en">Debugging</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/debug/asan.html">AddressSanitizer</a></li>
+          <li><a href="https://source.android.com/devices/tech/debug/dumpsys.html">Dumpsys</a></li>
+          <li><a href="https://source.android.com/devices/tech/debug/native-memory.html">Native Memory Use</a></li>
+          <li><a href="https://source.android.com/devices/tech/debug/netstats.html">Network Use</a></li>
+          <li><a href="https://source.android.com/devices/tech/debug/procstats.html">RAM Use</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/admin/index.html">
+          <span class="en">Device Administration</span></a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/admin/implement.html">Implementation</a></li>
+          <li><a href="https://source.android.com/devices/tech/admin/multi-user.html">Multiple Users</a></li>
+          <li><a href="https://source.android.com/devices/tech/admin/managed-profiles.html">Managed Profiles</a></li>
+          <li><a href="https://source.android.com/devices/tech/admin/provision.html">Provisioning</a></li>
+          <li><a href="https://source.android.com/devices/tech/admin/multiuser-apps.html">Multiuser Apps</a></li>
+          <li><a href="https://source.android.com/devices/tech/admin/testing-setup.html">Testing Setup</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header empty">
+          <a href="https://source.android.com/devices/halref/index.html">
+            <span class="en">HAL File Reference</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+            <a href="https://source.android.com/devices/tech/ota/index.html">
+              <span class="en">OTA Updates</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/ota/tools.html">OTA Tools</a></li>
+          <li><a href="https://source.android.com/devices/tech/ota/block.html">Block-based OTA</a></li>
+          <li><a href="https://source.android.com/devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
+          <li><a href="https://source.android.com/devices/tech/ota/device_code.html">Device-Specific Code</a></li>
+          <li><a href="https://source.android.com/devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/power/index.html"><span class="en">Power</span></a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/power/mgmt.html">Power Management</a>
+          </li>
+          <li><a href="https://source.android.com/devices/tech/power/component.html">Component Power</a></li>
+          <li><a href="https://source.android.com/devices/tech/power/device.html">Device Power</a>
+          </li>
+          <li><a href="https://source.android.com/devices/tech/power/values.html">Power Values</a></li>
+          <li><a href="https://source.android.com/devices/tech/power/batterystats.html">Battery Use</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="https://source.android.com/devices/tech/test_infra/tradefed/index.html">
+            <span class="en">Testing Infrastructure</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/fundamentals/index.html">Start Here</a></li>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/fundamentals/machine_setup.html">Machine Setup</a></li>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/fundamentals/devices.html">Working with Devices</a></li>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/fundamentals/lifecycle.html">Test Lifecycle</a></li>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/fundamentals/options.html">Option Handling</a></li>
+          <li><a href="https://source.android.com/devices/tech/test_infra/tradefed/full_example.html">An End-to-End Example</a></li>
+          <li id="tradefed-tree-list" class="nav-section">
+            <div class="nav-section-header">
+              <a href="https://source.android.com/reference/packages.html">
+                <span class="en">Package Index</span>
+              </a>
+            </div>
+          <ul><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/build/package-summary.html">tradefed.build</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/build/IAppBuildInfo.html">IAppBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IBuildInfo.html">IBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IBuildProvider.html">IBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IDeviceBuildInfo.html">IDeviceBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IDeviceBuildProvider.html">IDeviceBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IFileDownloader.html">IFileDownloader</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IFolderBuildInfo.html">IFolderBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/IKernelBuildInfo.html">IKernelBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/ISdkBuildInfo.html">ISdkBuildInfo</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/build/AppBuildInfo.html">AppBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/AppDeviceBuildInfo.html">AppDeviceBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/BootstrapBuildProvider.html">BootstrapBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/BuildInfo.html">BuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/DeviceBuildDescriptor.html">DeviceBuildDescriptor</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/DeviceBuildInfo.html">DeviceBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/DeviceFolderBuildInfo.html">DeviceFolderBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/ExistingBuildProvider.html">ExistingBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/FileDownloadCache.html">FileDownloadCache</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/FileDownloadCacheFactory.html">FileDownloadCacheFactory</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/FileDownloadCacheWrapper.html">FileDownloadCacheWrapper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/FolderBuildInfo.html">FolderBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/KernelBuildInfo.html">KernelBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/KernelDeviceBuildInfo.html">KernelDeviceBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/LocalAppBuildProvider.html">LocalAppBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/LocalDeviceBuildProvider.html">LocalDeviceBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/LocalFolderBuildProvider.html">LocalFolderBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/LocalSdkBuildProvider.html">LocalSdkBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/OtaZipfileBuildProvider.html">OtaZipfileBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/SdkBuildInfo.html">SdkBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/SdkFolderBuildInfo.html">SdkFolderBuildInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/StubBuildProvider.html">StubBuildProvider</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/build/VersionedFile.html">VersionedFile</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/build/BuildRetrievalError.html">BuildRetrievalError</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/command/package-summary.html">tradefed.command</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileWatcher.ICommandFileListener.html">CommandFileWatcher.ICommandFileListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/ICommandListener.html">ICommandListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/ICommandOptions.html">ICommandOptions</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/ICommandScheduler.html">ICommandScheduler</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/ICommandScheduler.IScheduledInvocationListener.html">ICommandScheduler.IScheduledInvocationListener</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileParser.html">CommandFileParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileParser.Bitmask.html">CommandFileParser.Bitmask</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileParser.CommandLine.html">CommandFileParser.CommandLine</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileWatcher.html">CommandFileWatcher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandFileWatcher.CommandFile.html">CommandFileWatcher.CommandFile</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandOptions.html">CommandOptions</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandRunner.html">CommandRunner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandScheduler.html">CommandScheduler</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandScheduler.CommandTracker.html">CommandScheduler.CommandTracker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/CommandScheduler.CommandTrackerIdComparator.html">CommandScheduler.CommandTrackerIdComparator</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/Console.html">Console</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/Console.ArgRunnable.html">Console.ArgRunnable</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/Console.CaptureList.html">Console.CaptureList</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/Verify.html">Verify</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/command/FatalHostError.html">FatalHostError</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/command/remote/package-summary.html">tradefed.command.remote</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/command/remote/DeviceTracker.html">DeviceTracker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/remote/ExecCommandTracker.html">ExecCommandTracker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/command/remote/RemoteManager.html">RemoteManager</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/config/package-summary.html">tradefed.config</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Annotations</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/config/Option.html">Option</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/OptionClass.html">OptionClass</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/config/IConfigDefLoader.html">IConfigDefLoader</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/IConfiguration.html">IConfiguration</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/IConfigurationFactory.html">IConfigurationFactory</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/IConfigurationReceiver.html">IConfigurationReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/IGlobalConfiguration.html">IGlobalConfiguration</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/config/ArgsOptionParser.html">ArgsOptionParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/Configuration.html">Configuration</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationDef.html">ConfigurationDef</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationDef.OptionDef.html">ConfigurationDef.OptionDef</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationFactory.html">ConfigurationFactory</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationFactory.ConfigId.html">ConfigurationFactory.ConfigId</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationFactory.ConfigLoader.html">ConfigurationFactory.ConfigLoader</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationXmlParser.html">ConfigurationXmlParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationXmlParser.ConfigHandler.html">ConfigurationXmlParser.ConfigHandler</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationXmlParserSettings.html">ConfigurationXmlParserSettings</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/GlobalConfiguration.html">GlobalConfiguration</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/OptionCopier.html">OptionCopier</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/OptionSetter.html">OptionSetter</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/config/Option.Importance.html">Option.Importance</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/config/OptionUpdateRule.html">OptionUpdateRule</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/config/ConfigurationException.html">ConfigurationException</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/device/package-summary.html">tradefed.device</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceManager.IManagedTestDeviceFactory.html">DeviceManager.IManagedTestDeviceFactory</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IAndroidDebugBridge.html">IAndroidDebugBridge</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceManager.html">IDeviceManager</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceManager.IFastbootListener.html">IDeviceManager.IFastbootListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceMonitor.html">IDeviceMonitor</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceRecovery.html">IDeviceRecovery</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceSelection.html">IDeviceSelection</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceStateMonitor.html">IDeviceStateMonitor</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IFileEntry.html">IFileEntry</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IManagedTestDevice.html">IManagedTestDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IMultiDeviceRecovery.html">IMultiDeviceRecovery</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/ITestDevice.html">ITestDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IWifiHelper.html">IWifiHelper</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/device/AndroidDebugBridgeWrapper.html">AndroidDebugBridgeWrapper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/BackgroundDeviceAction.html">BackgroundDeviceAction</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/CollectingByteOutputReceiver.html">CollectingByteOutputReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/CollectingOutputReceiver.html">CollectingOutputReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/CpuStatsCollector.html">CpuStatsCollector</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/CpuStatsCollector.CpuStats.html">CpuStatsCollector.CpuStats</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/CpuStatsCollector.CpuStatsReceiver.html">CpuStatsCollector.CpuStatsReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceDiagTest.html">DeviceDiagTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceManager.html">DeviceManager</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceManager.FastbootDevice.html">DeviceManager.FastbootDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceMonitorMultiplexer.html">DeviceMonitorMultiplexer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceSelectionOptions.html">DeviceSelectionOptions</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceStateMonitor.html">DeviceStateMonitor</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceUtilStatsMonitor.html">DeviceUtilStatsMonitor</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceUtilStatsMonitor.UtilizationDesc.html">DeviceUtilStatsMonitor.UtilizationDesc</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DumpsysPackageReceiver.html">DumpsysPackageReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/FastbootHelper.html">FastbootHelper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/FileEntryWrapper.html">FileEntryWrapper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IDeviceMonitor.DeviceLister.html">IDeviceMonitor.DeviceLister</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IManagedTestDevice.DeviceEventResponse.html">IManagedTestDevice.DeviceEventResponse</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/ITestDevice.MountPointInfo.html">ITestDevice.MountPointInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/LargeOutputReceiver.html">LargeOutputReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/LogcatReceiver.html">LogcatReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/ManagedDeviceList.html">ManagedDeviceList</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/NullDevice.html">NullDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/PackageInfo.html">PackageInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/ReconnectingRecovery.html">ReconnectingRecovery</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/StubDevice.html">StubDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/StubDeviceRecovery.html">StubDeviceRecovery</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TestDevice.html">TestDevice</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TestDeviceOptions.html">TestDeviceOptions</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TopHelper.html">TopHelper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TopHelper.TopReceiver.html">TopHelper.TopReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TopHelper.TopStats.html">TopHelper.TopStats</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/WaitDeviceRecovery.html">WaitDeviceRecovery</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/WifiHelper.html">WifiHelper</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/device/CpuStatsCollector.TimeCategory.html">CpuStatsCollector.TimeCategory</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceUtilStatsMonitor.StubDeviceUtil.html">DeviceUtilStatsMonitor.StubDeviceUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/ITestDevice.RecoveryMode.html">ITestDevice.RecoveryMode</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/IWifiHelper.WifiState.html">IWifiHelper.WifiState</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TestDeviceState.html">TestDeviceState</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/TopHelper.PercentCategory.html">TopHelper.PercentCategory</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceFatalError.html">DeviceFatalError</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceNotAvailableException.html">DeviceNotAvailableException</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DeviceUnresponsiveException.html">DeviceUnresponsiveException</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/DumpsysPackageReceiver.ParseException.html">DumpsysPackageReceiver.ParseException</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/NetworkNotAvailableException.html">NetworkNotAvailableException</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/device/NoDeviceException.html">NoDeviceException</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/invoker/package-summary.html">tradefed.invoker</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/IRescheduler.html">IRescheduler</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/ITestInvocation.html">ITestInvocation</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/ShardListener.html">ShardListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/ShardMasterResultForwarder.html">ShardMasterResultForwarder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/StubRescheduler.html">StubRescheduler</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/invoker/TestInvocation.html">TestInvocation</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/log/package-summary.html">tradefed.log</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/log/ILeveledLogOutput.html">ILeveledLogOutput</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/ILogRegistry.html">ILogRegistry</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/ITerribleFailureHandler.html">ITerribleFailureHandler</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/log/ConsoleReaderOutputStream.html">ConsoleReaderOutputStream</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/FileLogger.html">FileLogger</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/LogRegistry.html">LogRegistry</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/LogUtil.html">LogUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/LogUtil.CLog.html">LogUtil.CLog</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/StdoutLogger.html">StdoutLogger</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/log/TerribleFailureEmailHandler.html">TerribleFailureEmailHandler</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/result/package-summary.html">tradefed.result</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.SubPredicate.html">BugreportCollector.SubPredicate</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ILogSaver.html">ILogSaver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ILogSaverListener.html">ILogSaverListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InputStreamSource.html">InputStreamSource</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/IShardableListener.html">IShardableListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ITestInvocationListener.html">ITestInvocationListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ITestSummaryListener.html">ITestSummaryListener</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.html">BugreportCollector</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.Predicate.html">BugreportCollector.Predicate</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ByteArrayInputStreamSource.html">ByteArrayInputStreamSource</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/CodeCoverageReporter.html">CodeCoverageReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/CollectingTestListener.html">CollectingTestListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ConsoleResultReporter.html">ConsoleResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/DeviceFileReporter.html">DeviceFileReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/DeviceUnavailEmailResultReporter.html">DeviceUnavailEmailResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/EmailResultReporter.html">EmailResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/FailureEmailResultReporter.html">FailureEmailResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/FileInputStreamSource.html">FileInputStreamSource</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/FileSystemLogSaver.html">FileSystemLogSaver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InvocationFailureEmailResultReporter.html">InvocationFailureEmailResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InvocationSummaryHelper.html">InvocationSummaryHelper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InvocationToJUnitResultForwarder.html">InvocationToJUnitResultForwarder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InvocationToJUnitResultForwarder.TestIdentifierResult.html">InvocationToJUnitResultForwarder.TestIdentifierResult</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/JUnitToInvocationResultForwarder.html">JUnitToInvocationResultForwarder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/LogFile.html">LogFile</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/LogFileSaver.html">LogFileSaver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/LogFilesReporter.html">LogFilesReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/NameMangleListener.html">NameMangleListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/ResultForwarder.html">ResultForwarder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/RetentionFileSaver.html">RetentionFileSaver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/SnapshotInputStreamSource.html">SnapshotInputStreamSource</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/StubTestInvocationListener.html">StubTestInvocationListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/StubTestRunListener.html">StubTestRunListener</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/TestFailureEmailResultReporter.html">TestFailureEmailResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/TestSummary.html">TestSummary</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/TestSummary.TypedString.html">TestSummary.TypedString</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/TextResultReporter.html">TextResultReporter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/XmlResultReporter.html">XmlResultReporter</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.Filter.html">BugreportCollector.Filter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.Freq.html">BugreportCollector.Freq</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.Noun.html">BugreportCollector.Noun</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/BugreportCollector.Relation.html">BugreportCollector.Relation</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/InvocationStatus.html">InvocationStatus</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/LogDataType.html">LogDataType</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/result/TestSummary.Type.html">TestSummary.Type</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/targetprep/package-summary.html">tradefed.targetprep</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/FlashingResourcesParser.Constraint.html">FlashingResourcesParser.Constraint</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/IDeviceFlasher.html">IDeviceFlasher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/IFlashingResourcesParser.html">IFlashingResourcesParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/IFlashingResourcesRetriever.html">IFlashingResourcesRetriever</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/ITargetCleaner.html">ITargetCleaner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/ITargetPreparer.html">ITargetPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/ITestsZipInstaller.html">ITestsZipInstaller</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/AbstractTargetCleaner.html">AbstractTargetCleaner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/AdditionalFilesInstaller.html">AdditionalFilesInstaller</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/AllTestAppsInstallSetup.html">AllTestAppsInstallSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/AppSetup.html">AppSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/BuildInfoAttributePreparer.html">BuildInfoAttributePreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/BuildInfoRecorder.html">BuildInfoRecorder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/CdmaDeviceFlasher.html">CdmaDeviceFlasher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/ConnectionChecker.html">ConnectionChecker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DefaultTestsZipInstaller.html">DefaultTestsZipInstaller</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceBuildInfoInjector.html">DeviceBuildInfoInjector</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceCleaner.html">DeviceCleaner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceFlashPreparer.html">DeviceFlashPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceSetup.html">DeviceSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceWiper.html">DeviceWiper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/EraseUserDataPreparer.html">EraseUserDataPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/FastbootDeviceFlasher.html">FastbootDeviceFlasher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/FileCleaner.html">FileCleaner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/FlashingResourcesParser.html">FlashingResourcesParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/FlashingResourcesParser.AndroidInfo.html">FlashingResourcesParser.AndroidInfo</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/InstallApkSetup.html">InstallApkSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/InstallBuildEnvApkSetup.html">InstallBuildEnvApkSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/InstrumentationPreparer.html">InstrumentationPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/KernelFlashPreparer.html">KernelFlashPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/KeyValueConfigPreparer.html">KeyValueConfigPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/LocalSdkAvdPreparer.html">LocalSdkAvdPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/MediaSyncPreparer.html">MediaSyncPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/PushFilePreparer.html">PushFilePreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/RemoveSystemAppPreparer.html">RemoveSystemAppPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/RunCommandTargetPreparer.html">RunCommandTargetPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/SdkAvdPreparer.html">SdkAvdPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/StopServicesSetup.html">StopServicesSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/StubTargetPreparer.html">StubTargetPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/SystemUpdaterDeviceFlasher.html">SystemUpdaterDeviceFlasher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TearDownPassThroughPreparer.html">TearDownPassThroughPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TestAppInstallSetup.html">TestAppInstallSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TestFilePushSetup.html">TestFilePushSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TestJarInstaller.html">TestJarInstaller</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TestSystemAppInstallSetup.html">TestSystemAppInstallSetup</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TimeWaster.html">TimeWaster</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/WaitForDeviceDatetimePreparer.html">WaitForDeviceDatetimePreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/WifiPreparer.html">WifiPreparer</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/AltDirBehavior.html">AltDirBehavior</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceCleaner.CleanupAction.html">DeviceCleaner.CleanupAction</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceCleaner.PostCleanupAction.html">DeviceCleaner.PostCleanupAction</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceFlashPreparer.EncryptionOptions.html">DeviceFlashPreparer.EncryptionOptions</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceSetup.BinaryState.html">DeviceSetup.BinaryState</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/IDeviceFlasher.UserDataFlashOption.html">IDeviceFlasher.UserDataFlashOption</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/BuildError.html">BuildError</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/DeviceFailedToBootError.html">DeviceFailedToBootError</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/TargetSetupError.html">TargetSetupError</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/package-summary.html">tradefed.targetprep.companion</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CheckPairingPreparer.html">CheckPairingPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CompanionAllocator.html">CompanionAllocator</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CompanionAwarePreparer.html">CompanionAwarePreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CompanionDeviceTracker.html">CompanionDeviceTracker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CompanionRunCommandTargetPreparer.html">CompanionRunCommandTargetPreparer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/targetprep/companion/CompanionTestAppInstallSetup.html">CompanionTestAppInstallSetup</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/testtype/package-summary.html">tradefed.testtype</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IAbi.html">IAbi</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IAbiReceiver.html">IAbiReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IBuildReceiver.html">IBuildReceiver</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IDeviceTest.html">IDeviceTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IRemoteTest.html">IRemoteTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IResumableTest.html">IResumableTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IRetriableTest.html">IRetriableTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/IShardableTest.html">IShardableTest</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/CodeCoverageTest.html">CodeCoverageTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/CompanionAwareTest.html">CompanionAwareTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/DeviceBatteryLevelChecker.html">DeviceBatteryLevelChecker</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/DeviceTestCase.html">DeviceTestCase</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/DeviceTestResult.html">DeviceTestResult</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/DeviceTestSuite.html">DeviceTestSuite</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/FakeTest.html">FakeTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/GTest.html">GTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/GTestResultParser.html">GTestResultParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/HostTest.html">HostTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/InstalledInstrumentationsTest.html">InstalledInstrumentationsTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/InstrumentationFileTest.html">InstrumentationFileTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/InstrumentationSerialTest.html">InstrumentationSerialTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/InstrumentationTest.html">InstrumentationTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/JUnitRunUtil.html">JUnitRunUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/NativeBenchmarkTest.html">NativeBenchmarkTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/NativeBenchmarkTestParser.html">NativeBenchmarkTestParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/NativeStressTest.html">NativeStressTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/NativeStressTestParser.html">NativeStressTestParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/StubTest.html">StubTest</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/UiAutomatorRunner.html">UiAutomatorRunner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/UiAutomatorTest.html">UiAutomatorTest</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/UiAutomatorTest.LoggingOption.html">UiAutomatorTest.LoggingOption</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/UiAutomatorTest.TestFailureAction.html">UiAutomatorTest.TestFailureAction</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/DeviceTestResult.RuntimeDeviceNotAvailableException.html">DeviceTestResult.RuntimeDeviceNotAvailableException</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/testtype/testdefs/package-summary.html">tradefed.testtype.testdefs</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/testdefs/InstrumentationTestDef.html">InstrumentationTestDef</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/testdefs/XmlDefsParser.html">XmlDefsParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/testtype/testdefs/XmlDefsTest.html">XmlDefsTest</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/util/package-summary.html">tradefed.util</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/ClassPathScanner.IClassPathFilter.html">ClassPathScanner.IClassPathFilter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ConditionPriorityBlockingQueue.IMatcher.html">ConditionPriorityBlockingQueue.IMatcher</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/IEmail.html">IEmail</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/IRunUtil.html">IRunUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/IRunUtil.IRunnableResult.html">IRunUtil.IRunnableResult</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/AaptParser.html">AaptParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/AbiFormatter.html">AbiFormatter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/Alarm.html">Alarm</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ArrayUtil.html">ArrayUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/BluetoothUtils.html">BluetoothUtils</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/BulkEmailer.html">BulkEmailer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ByteArrayList.html">ByteArrayList</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/CircularByteArray.html">CircularByteArray</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ClassPathScanner.html">ClassPathScanner</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ClassPathScanner.ClassNameFilter.html">ClassPathScanner.ClassNameFilter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ClassPathScanner.ExternalClassNameFilter.html">ClassPathScanner.ExternalClassNameFilter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/CommandResult.html">CommandResult</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ConditionPriorityBlockingQueue.html">ConditionPriorityBlockingQueue</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ConditionPriorityBlockingQueue.AlwaysMatch.html">ConditionPriorityBlockingQueue.AlwaysMatch</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/DeviceConcurrentUtil.html">DeviceConcurrentUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/DeviceConcurrentUtil.ShellCommandCallable.html">DeviceConcurrentUtil.ShellCommandCallable</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/Email.html">Email</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/FakeTestsZipFolder.html">FakeTestsZipFolder</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/FileUtil.html">FileUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/FixedByteArrayOutputStream.html">FixedByteArrayOutputStream</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/IEmail.Message.html">IEmail.Message</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/JUnitXmlParser.html">JUnitXmlParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/MultiMap.html">MultiMap</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/NullUtil.html">NullUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/Pair.html">Pair</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/PropertyChanger.html">PropertyChanger</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/QuotationAwareTokenizer.html">QuotationAwareTokenizer</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/RegexTrie.html">RegexTrie</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/RegexTrie.CompPattern.html">RegexTrie.CompPattern</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/RunUtil.html">RunUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/SimpleStats.html">SimpleStats</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/SizeLimitedOutputStream.html">SizeLimitedOutputStream</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/StreamUtil.html">StreamUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/StringEscapeUtils.html">StringEscapeUtils</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/TableFormatter.html">TableFormatter</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/TestLoader.html">TestLoader</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/TimeUtil.html">TimeUtil</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/TimeVal.html">TimeVal</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/UniqueMultiMap.html">UniqueMultiMap</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/VersionParser.html">VersionParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/ZipUtil.html">ZipUtil</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Enums</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/CommandStatus.html">CommandStatus</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/FakeTestsZipFolder.ItemType.html">FakeTestsZipFolder.ItemType</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/FileUtil.LowDiskSpaceException.html">FileUtil.LowDiskSpaceException</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/RunInterruptedException.html">RunInterruptedException</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/util/net/package-summary.html">tradefed.util.net</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Interfaces</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/IHttpHelper.html">IHttpHelper</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/HttpHelper.html">HttpHelper</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/HttpHelper.RequestRunnable.html">HttpHelper.RequestRunnable</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/HttpMultipartPost.html">HttpMultipartPost</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/XmlRpcHelper.html">XmlRpcHelper</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/net/IHttpHelper.DataSizeException.html">IHttpHelper.DataSizeException</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><a href="https://source.android.com/reference/com/android/tradefed/util/xml/package-summary.html">tradefed.util.xml</a></div><ul class="tree-list-children"><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Classes</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/xml/AbstractXmlParser.html">AbstractXmlParser</a></li><li><a href="https://source.android.com/reference/com/android/tradefed/util/xml/AndroidManifestWriter.html">AndroidManifestWriter</a></li></ul></li><li class="nav-section"><div class="nav-section-header-ref"><span class="tree-list-subtitle">Exceptions</span></div><ul class="tree-list-children"><li><a href="https://source.android.com/reference/com/android/tradefed/util/xml/AbstractXmlParser.ParseException.html">AbstractXmlParser.ParseException</a></li></ul></li></ul></li></ul></li>
+        </ul>
+      </li>
+    </ul>
+  </li> <!-- End nav-section, Core Technologies -->
+</ul></div></div></div>
+      <script type="text/javascript">
+        showTradefedRefTree();
+      </script>
+    </div> <!-- end side-nav -->
+    <script>
+      $(document).ready(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+  
+
+
+
+
+<div class="col-12" id="doc-col">
+
+
+  
+    
+      
+        <h1 itemprop="name">Adoptable Storage</h1>
+      
+    
+  
+
+
+  
+  <div id="jd-content">
+
+    <div class="jd-descr" itemprop="articleBody">
+    <!--
+    Copyright 2015 The Android Open Source Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    <li><a href="https://source.android.com/devices/storage/adoptable.html#security">Security</a></li><li><a href="https://source.android.com/devices/storage/adoptable.html#performance_and_stability">Performance and stability</a></li></ol>
+  </div>
+</div>
+
+
+<p>Android has always supported external storage accessories (such as SD cards), but
+these accessories were historically limited to simple file storage, due to
+their expected impermanence and the minimal data protection offered to
+<a href="https://source.android.com/devices/storage/traditional.html">traditional external storage</a>.
+Android 6.0 introduces the ability to
+<a href="https://developer.android.com/preview/behavior-changes.html#behavior-adoptable-storage">adopt</a>
+external storage media to act like internal storage.</p>
+
+<p>When external storage media is adopted, it’s formatted and encrypted to only
+work with a single Android device at a time. Because the media is strongly tied
+to the Android device that adopted it, it can safely store both apps and
+private data for all users.</p>
+
+<p>When users insert new storage media (such as an SD card) in an adoptable
+location, Android asks them how they want to use the media. They can choose to
+adopt the media, which formats and encrypts it, or they can continue using it
+as-is for simple file storage. If they choose to adopt, the platform offers to
+migrate the primary shared storage contents (typically mounted at <code>/sdcard</code>)
+to the newly adopted media, freeing up valuable space on internal storage.</p>
+
+<p>Apps can be placed on adopted storage media only when the developer has
+indicated support through the <code>android:installLocation</code> attribute.
+New installs of supported apps are automatically placed on the
+storage device with the most free space, and users can move supported apps
+between storage devices in the <em>Settings</em> app. Apps moved to adopted
+media are remembered while the media is ejected,
+and return when the media is reinserted.</p>
+
+<h2 id="security" style="margin-bottom: 0px;">Security</h2><hr>
+
+
+<p>The platform randomly generates an encryption key for each adopted device,
+and that key is stored on the internal storage of the Android device. This
+effectively makes the adopted media as secure as internal storage. Keys are
+associated with adopted devices based on the adopted partition GUID. The
+adopted device is encrypted using <code>dm-crypt</code> configured with the
+<code>aes-cbc-essiv:sha256</code> algorithm and a 128-bit key size.</p>
+
+<p>The on-disk layout of the adopted device closely mirrors the internal data
+partition, including SELinux labels, etc. When multi-user is supported on the
+Android device, the adopted storage device also supports multi-user with the
+same level of isolation as internal storage.</p>
+
+<p>Because the contents of an adopted storage device are strongly tied to the
+Android device that adopted it, the encryption keys should not be extractable
+from the parent device, and therefore the storage device can't be mounted elsewhere.</p>
+
+<h2 id="performance_and_stability" style="margin-bottom: 0px;">Performance and stability</h2><hr>
+
+
+<p>Only external storage media in stable locations, such as a slot inside a
+battery compartment or behind a protective cover, should be considered for
+adoption to help avoid accidental data loss or corruption. In particular, USB
+devices connected to a phone or tablet should never be considered for adoption.
+One common exception would be an external USB drive connected to a TV-style
+device, because the entire TV is typically installed in a stable location.</p>
+
+<p>When a user adopts a new storage device, the platform runs a benchmark and
+compares its performance against internal storage. If the adopted device is
+significantly slower than internal storage, the platform warns the user about a
+possibly degraded experience. This benchmark was derived from the actual I/O
+behavior of popular Android apps. Currently, the AOSP implementation will only
+warn users beyond a single threshold, but device manufacturers may adapt this
+further, such as rejecting adoption completely if the card is extremely slow.</p>
+
+<p>Adopted devices must be formatted with a filesystem that supports POSIX
+permissions and extended attributes, such as <code>ext4</code> or <code>f2fs</code>.
+For optimal performance, the <code>f2fs</code> filesystem is recommended for
+flash-based storage devices.</p>
+
+<p>When performing periodic idle maintenance, the platform issues <code>FI_TRIM</code>
+to adopted media just like it does for internal storage. The current SD card
+specification does not support the <code>DISCARD</code> command; but the kernel
+instead falls back to the <code>ERASE</code> command, which SD card firmware
+may choose to use for optimization purposes.</p>
+
+    </div>
+
+      <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <div class="layout-content-col col-9" style="padding-top:4px">
+        </div>
+        
+        <div class="paging-links layout-content-col col-4">
+          
+        </div>
+        
+      </div>
+      
+      
+    </div> <!-- end jd-content -->
+  <div id="footer" class="wrap">
+  <style>.feedback { float: right !Important }</style>
+  <div class="feedback">
+    <a href="https://source.android.com/devices/storage/adoptable.html#" class="button" onclick=" try {
+      userfeedback.api.startFeedback({&#39;productId&#39;:&#39;715571&#39;,&#39;authuser&#39;:&#39;1&#39;});return false;}catch(e){}">Send Feedback</a>
+  </div>
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="https://source.android.com/license.html">Content 
+  License</a>.
+  </div>
+    <div id="footerlinks">
+    
+  <p>
+    <a href="https://source.android.com/source/index.html">About Android</a>&nbsp;&nbsp;|&nbsp;
+    <a href="https://source.android.com/source/community.html">Community</a>&nbsp;&nbsp;|&nbsp;
+    <a href="https://source.android.com/legal.html">Legal</a>&nbsp;&nbsp;|&nbsp;
+  </p>
+  </div>
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+
+
+
+
+
+
+
+
+
+
+</div></body></html>
