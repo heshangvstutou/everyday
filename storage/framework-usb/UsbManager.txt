@@ -1,0 +1,11 @@
+1、USB的状态
+   USB_CONNECTED--------判断USB是否连接
+   USB_CONFIGURED-------USB是否配置，0表示没有配置，1表示配置
+   USB_FUNCTION_ADB-----ADB被打开
+   USB_FUNCTION_RNDIS----RNDIS网络功能
+   USB_FUNCTION_MTP------MTP模式
+   USB_FUNCTION_PTP------PTP模式
+   USB_FUNCTION_AUDIO_SOURCE----audio source功能
+   USB_FUNCTION_MIDI-----MIDI功能
+
+
