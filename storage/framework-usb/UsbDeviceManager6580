@@ -1,0 +1,139 @@
+
+zhangjie@android:~/log/6580/6580test/mobilelog/APLog_2016_0422_135951$ 
+zhangjie@android:~/log/6580/6580test/mobilelog/APLog_2016_0422_135951$ grep -nr UsbDeviceManager ./ |awk '{for(i=6;i<=NF;i++) printf"%s ",$i} {print ""}'
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 0, mSettingUsbCharging: false, mConnected: false, mSettingUsbBicr: false 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 0, mSettingUsbCharging: false, mConnected: false, mSettingUsbBicr: false 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 2, mSettingUsbCharging: false, mConnected: false, mSettingUsbBicr: false 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONNECTED, SUBSYSTEM=android_usb, SEQNUM=2151, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: CONNECTED 
+UsbDeviceManager: updateState - CONNECTED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY CONNECTED mSettingFunction: mtp,adb 
+UsbDeviceManager: handleMessage - 0 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: true 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: mtp,adb 
+UsbDeviceManager: updateUsbNotification - containsFunction: USB_FUNCTION_MTP 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONFIGURED, SUBSYSTEM=android_usb, SEQNUM=2152, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: CONFIGURED 
+UsbDeviceManager: updateState - CONFIGURED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY CONFIGURED mSettingFunction: mtp,adb 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: true configured: false 
+UsbDeviceManager: sys.usb.mtpConnect = mtpConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:true,mConfigured:false, mHwDisconnected:false 
+UsbDeviceManager: handleMessage - 0 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: true 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: mtp,adb 
+UsbDeviceManager: updateUsbNotification - containsFunction: USB_FUNCTION_MTP 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: true configured: true 
+UsbDeviceManager: sys.usb.mtpConnect = mtpConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:true,mConfigured:true, mHwDisconnected:false 
+UsbDeviceManager: setCurrentFunctions(rndis) default: false 
+UsbDeviceManager: handleMessage - 2 
+UsbDeviceManager: setEnabledFunctions - functions: rndis 
+UsbDeviceManager: setEnabledFunctions - mDefaultFunctions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mCurrentFunctions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mSettingFunction: mtp,adb 
+UsbDeviceManager: Add adb into rndis 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: else setEnabledFunctions, functions: rndis,adb, mCurrentFunctions: mtp,adb 
+UsbDeviceManager: setUsbConfig(none) 
+UsbDeviceManager: setUsbConfig - config: none 
+UsbDeviceManager: USB UEVENT: {USB_STATE=DISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2157, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: DISCONNECTED 
+UsbDeviceManager: updateState - DISCONNECTED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY DISCONNECTED mSettingFunction: rndis 
+UsbDeviceManager: setUsbConfig(rndis,adb) 
+UsbDeviceManager: setUsbConfig - config: rndis,adb 
+UsbDeviceManager: handleMessage - MSG_SET_CURRENT_FUNCTION - functions: rndis 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONNECTED, SUBSYSTEM=android_usb, SEQNUM=2161, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: CONNECTED 
+UsbDeviceManager: updateState - CONNECTED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY CONNECTED mSettingFunction: rndis 
+UsbDeviceManager: handleMessage - 0 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: true 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: rndis,adb 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: true configured: false 
+UsbDeviceManager: sys.usb.mtpConnect = noneMTPConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:true,mConfigured:false, mHwDisconnected:false 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONFIGURED, SUBSYSTEM=android_usb, SEQNUM=2162, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: CONFIGURED 
+UsbDeviceManager: updateState - CONFIGURED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY CONFIGURED mSettingFunction: rndis 
+UsbDeviceManager: handleMessage - 0 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: true 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: rndis,adb 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: true configured: true 
+UsbDeviceManager: sys.usb.mtpConnect = noneMTPConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:true,mConfigured:true, mHwDisconnected:false 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 2, mSettingUsbCharging: false, mConnected: true, mSettingUsbBicr: false 
+UsbDeviceManager: USB UEVENT: {USB_STATE=DISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2171, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: DISCONNECTED 
+UsbDeviceManager: updateState - DISCONNECTED 
+UsbDeviceManager: updateState - RNDIS_UPDATE_DELAY DISCONNECTED mSettingFunction: rndis 
+UsbDeviceManager: USB UEVENT: {USB_STATE=HWDISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2172, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: HWDISCONNECTED 
+UsbDeviceManager: updateState - HWDISCONNECTED 
+UsbDeviceManager: updateState - UPDATE_DELAY HWDISCONNECTED mSettingFunction: rndis 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 0, mSettingUsbCharging: false, mConnected: true, mSettingUsbBicr: false 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - [HW USB Disconnected] mHwDisconnected: true, mConnected: true, mConfigured: true 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - mPlugType: 0, mSettingUsbCharging: false, mConnected: true, mSettingUsbBicr: false 
+UsbDeviceManager: onReceive - BATTERY_CHANGED - [HW USB Disconnected] mHwDisconnected: true, mConnected: true, mConfigured: true 
+UsbDeviceManager: handleMessage - 6 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: false 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: rndis,adb 
+UsbDeviceManager: handleMessage - MSG_UPDATE_STATE/MSG_UPDATE_DISCONNECT_STATE - mConnected: false, mSettingUsbCharging: false, mSettingUsbBicr: false 
+UsbDeviceManager: setEnabledFunctions - functions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mDefaultFunctions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mCurrentFunctions: rndis,adb 
+UsbDeviceManager: setEnabledFunctions - mSettingFunction: rndis 
+UsbDeviceManager: Add adb into mtp,adb 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: else setEnabledFunctions, functions: mtp,adb, mCurrentFunctions: rndis,adb 
+UsbDeviceManager: setUsbConfig(none) 
+UsbDeviceManager: setUsbConfig - config: none 
+UsbDeviceManager: USB UEVENT: {USB_STATE=HWDISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2184, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: HWDISCONNECTED 
+UsbDeviceManager: updateState - HWDISCONNECTED 
+UsbDeviceManager: updateState - UPDATE_DELAY HWDISCONNECTED mSettingFunction: mtp,adb 
+UsbDeviceManager: setUsbConfig(mtp,adb) 
+UsbDeviceManager: setUsbConfig - config: mtp,adb 
+UsbDeviceManager: USB UEVENT: {USB_STATE=HWDISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2185, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: mUEventObserver - onUEvent - state: HWDISCONNECTED 
+UsbDeviceManager: updateState - HWDISCONNECTED 
+UsbDeviceManager: updateState - UPDATE_DELAY HWDISCONNECTED mSettingFunction: mtp,adb 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: false configured: false 
+UsbDeviceManager: sys.usb.mtpConnect = noneMTPConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:false,mConfigured:false, mHwDisconnected:true 
+UsbDeviceManager: handleMessage - 6 
+UsbDeviceManager: updateUsbNotification - mNotificationManager: android.app.NotificationManager@3e05c970 
+UsbDeviceManager: updateUsbNotification - mUseUsbNotification: true 
+UsbDeviceManager: updateUsbNotification - mConnected: false 
+UsbDeviceManager: updateUsbNotification - mCurrentFunctions: mtp,adb 
+UsbDeviceManager: handleMessage - MSG_UPDATE_STATE/MSG_UPDATE_DISCONNECT_STATE - mConnected: false, mSettingUsbCharging: false, mSettingUsbBicr: false 
+UsbDeviceManager: setEnabledFunctions - functions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mDefaultFunctions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mCurrentFunctions: mtp,adb 
+UsbDeviceManager: setEnabledFunctions - mSettingFunction: mtp,adb 
+UsbDeviceManager: Add adb into mtp,adb 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: else setEnabledFunctions, functions: mtp,adb, mCurrentFunctions: mtp,adb 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x20000000 (has extras) } connected: false configured: false 
+UsbDeviceManager: sys.usb.mtpConnect = noneMTPConnection 
+UsbDeviceManager: sys.usb.acm_idx= 
+UsbDeviceManager: handleMessage mConnected:false,mConfigured:false, mHwDisconnected:true 
+zhangjie@android:~/log/6580/6580test/mobilelog/APLog_2016_0422_135951$ 
+

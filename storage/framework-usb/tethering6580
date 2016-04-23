@@ -1,0 +1,523 @@
+
+zhangjie@android:~/log/6580/6580test/mobilelog/APLog_2016_0422_135951$ grep -nr Tethering ./ |awk '{for(i=6;i<=NF;i++) printf"%s ",$i} {print ""}'
+SocketClient: SocketClient sendData done: 200 69 Tethering stats list completed 
+NetdConnector: RCV <- {200 69 Tethering stats list completed} 
+NetdConnector: RMV <- {200 69 Tethering stats list completed} 
+SocketClient: SocketClient sendData done: 200 76 Tethering stats list completed 
+NetdConnector: RCV <- {200 76 Tethering stats list completed} 
+NetdConnector: RMV <- {200 76 Tethering stats list completed} 
+SocketClient: SocketClient sendData done: 200 79 Tethering stats list completed 
+NetdConnector: RCV <- {200 79 Tethering stats list completed} 
+NetdConnector: RMV <- {200 79 Tethering stats list completed} 
+SocketClient: SocketClient sendData done: 200 84 Tethering stats list completed 
+NetdConnector: RCV <- {200 84 Tethering stats list completed} 
+NetdConnector: RMV <- {200 84 Tethering stats list completed} 
+SocketClient: SocketClient sendData done: 200 89 Tethering stats list completed 
+NetdConnector: RCV <- {200 89 Tethering stats list completed} 
+NetdConnector: RMV <- {200 89 Tethering stats list completed} 
+SocketClient: SocketClient sendData done: 200 92 Tethering stats list completed 
+NetdConnector: RCV <- {200 92 Tethering stats list completed} 
+NetdConnector: RMV <- {200 92 Tethering stats list completed} 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = true usbConfigured = false, mRndisEnabled = false, mUsbTetherRequested = false 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = false 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = true usbConfigured = true, mRndisEnabled = false, mUsbTetherRequested = false 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+WirelessSettings: onPreferenceTreeClick: preference=Tethering & portable hotspot 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: false mUsbTetherCheckEnable: true 
+TetherSettings: onPreferenceTreeClick - setusbTethering(true) mUsbTethering: true 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: setUsbTethering(true) 
+Tethering: The MTK_TETHERING_RNDIS only 
+Tethering: interfaceAdded rndis0 
+Tethering: isTetheringIpv6Support: true 
+Tethering: setLastError: 0 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: setLastError: 16 
+Tethering: isTetheringIpv6Support: true 
+Tethering: interfaceAdded :rndis0 
+Tethering: [ISM_Initial] enter, sendTetherStateChangedBroadcast 
+Tethering: interfaceLinkStateChanged rndis0, false 
+Tethering: interfaceStatusChanged rndis0, false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: sendTetherStateChangedBroadcast 
+Tethering: isTetheringIpv6Support: true 
+Tethering: add avai 
+Tethering: ignore interface down for rndis0 
+Tethering: sendTetherStateChangedBroadcast 1, 0, 0 
+Tethering: clearTetheredNotification 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = true usbConfigured = false, mRndisEnabled = true, mUsbTetherRequested = true 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = true usbConfigured = true, mRndisEnabled = true, mUsbTetherRequested = true 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = true 
+Tethering: StateReceiver onReceive action synchronized: usbConnected && mRndisEnabled && mUsbTetherRequested, tetherUsb!! 
+Tethering: tetherUsb true 
+Tethering: Tethering rndis0 
+Tethering: [ISM_Initial] rndis0 processMessage what=2 
+Tethering: isTetheringIpv6Support: true 
+Tethering: setLastError: 16 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: setLastError: 16 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Starting] enter 
+Tethering: configureUsbIface(true) 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: false mUsbTethering: true mUsbTetherCheckEnable: false 
+Tethering: isTetheringIpv6Support: true 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+Tethering: addressUpdated rndis0, 192.168.42.129/24 
+Tethering: interfaceLinkStateChanged rndis0, true 
+Tethering: interfaceStatusChanged rndis0, true 
+Tethering: [ISM_Starting] sendTetherStateChangedBroadcast 
+Tethering: addressUpdated rndis0, fe80::64ea:daff:febe:ac48/64 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: sendTetherStateChangedBroadcast 
+Tethering: isTetheringIpv6Support: true 
+Tethering: sendTetherStateChangedBroadcast 0, 0, 0 
+Tethering: clearTetheredNotification 
+Tethering: [ISM_Tethered] enter 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered] Tethered rndis0 
+Tethering: [ISM_Tethered] sendTetherStateChangedBroadcast 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: sendTetherStateChangedBroadcast 
+Tethering: isTetheringIpv6Support: true 
+Tethering: usb isTethered 
+Tethering: sendTetherStateChangedBroadcast 0, 1, 0 
+Tethering: showTetheredNotification icon:17303185, type:usb 
+Tethering: isBspPackage: false 
+Tethering: isBspPackage: false 
+Tethering: INTERFACE_THROTTLE enable:false 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: [MSM_Initial][TetherMaster] processMessage what=1 
+Tethering: getLastError:16 
+Tethering: isBspPackage: false 
+Tethering: [MSM_Initial][TetherMaster] Tether Mode requested by rndis0 - TetheredState - Tethered - lastError =16 
+Tethering: [MSM_TetherModeAlive][TetherMaster] enter 
+Tethering: isTetheringIpv6Support: true 
+TetherController: Tethering services running 
+Tethering: startListeningForSimChanges 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: simchange mGenerationNumber=3, current generationNumber=3 
+Tethering: got Sim changed to state ABSENT, mSimAbsentSeen=false 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: [TetherMaster]chooseUpstreamType has upstream iface types: 
+Tethering: 0 
+Tethering: 1 
+Tethering: 5 
+Tethering: 7 
+Tethering: 9 
+Tethering: 49 
+Tethering: [TetherMaster]chooseUpstreamType(true), preferredApn =5, got type=1 
+Tethering: checkDataEnabled:false 
+Tethering: pre-checkDataEnabled + false 
+Tethering: [MSM_TetherModeAlive][TetherMaster] mMobileApnReserved:-1 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: Finding IPv4 upstream interface on: {InterfaceName: wlan0 LinkAddresses: [fe80::208:22ff:fe3a:bfa9/64,11.22.44.112/24,] Routes: [fe80::/64 -> :: wlan0,11.22.44.0/24 -> 0.0.0.0 wlan0,0.0.0.0/0 -> 11.22.44.1 wlan0,] DnsAddresses: [11.22.44.1,] Domains: MTU: 0 TcpBufferSizes: 524288,1048576,2097152,262144,524288,1048576 PcscfAddresses: [] } 
+Tethering: Found interface wlan0 
+Tethering: v4 and v6 Dnses: [/11.22.44.1] 
+Tethering: Setting DNS forwarders: Network=100, dnsServers=[11.22.44.1] 
+Tethering: [MSM_TetherModeAlive][TetherMaster] notifying tethered with iface =wlan0 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered] rndis0 processMessage what=12 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered:null] CMD_TETHER_CONNECTION_CHANGED mMyUpstreamIfaceName: null, mMyUpstreamIfaceNameIpv6:null, newUpstreamIfaceName: wlan0 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered] CMD_TETHER_CONNECTION_CHANGED enableNat for:null(rndis0, wlan0) 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered] CMD_TETHER_CONNECTION_CHANGED finished!null 
+Tethering: isTetheringIpv6Support: true 
+Tethering: interfaceLinkStateChanged rndis0, true 
+Tethering: interfaceStatusChanged rndis0, true 
+Tethering: addressUpdated rndis0, fe80::64ea:daff:febe:ac48/64 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+Tethering: interfaceLinkStateChanged rndis0, false 
+Tethering: interfaceStatusChanged rndis0, false 
+Tethering: ignore interface down for rndis0 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = false usbConfigured = false, mRndisEnabled = false, mUsbTetherRequested = false 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = true 
+Tethering: interfaceLinkStateChanged rndis0, false 
+Tethering: interfaceStatusChanged rndis0, false 
+Tethering: ignore interface down for rndis0 
+Tethering: interfaceRemoved rndis0 
+Tethering: interfaceRemoved, iface=rndis0, sendMessage:CMD_INTERFACE_DOWN 
+Tethering: [ISM_Tethered] rndis0 processMessage what=4 
+Tethering: [ISM_Tethered] mMyUpstreamIfaceName: wlan0 
+Tethering: [ISM_Tethered] cleanupUpstream disableNat(rndis0, wlan0) 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [ISM_Tethered] Untethered rndis0 
+Tethering: [ISM_Unavailable] enter, sendTetherStateChangedBroadcast 
+Tethering: isTetheringIpv6Support: true 
+Tethering: setLastError: 16 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isTetheringIpv6Support: true 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: sendTetherStateChangedBroadcast 
+Tethering: sendTetherStateChangedBroadcast 0, 0, 0 
+Tethering: clearTetheredNotification 
+Tethering: [MSM_TetherModeAlive][TetherMaster] processMessage what=2 
+Tethering: Tether Mode unrequested by rndis0 - UnavailableState - lastError =16 
+Tethering: TetherModeAlive removing notifyee rndis0 - UnavailableState - lastError =16 
+Tethering: isIpv6TetherPdModeSupport: false 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [MSM_TetherModeAlive] CMD_TETHER_MODE_UNREQUESTED is empty 
+TetherController: Tethering services stopped 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [MSM_TetherModeAliveState] sendTetherStateChangedBroadcast 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: sendTetherStateChangedBroadcast 
+Tethering: sendTetherStateChangedBroadcast 0, 0, 0 
+Tethering: clearTetheredNotification 
+Tethering: [MSM_TetherModeAlive] CMD_TETHER_MODE_UNREQUESTED <=========== 
+Tethering: [MSM_TetherModeAlive][TetherMaster] exit 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [MSM_TetherModeAlive][TetherMaster] mMobileApnReserved:-1 
+Tethering: stopListeningForSimChanges 
+Tethering: [MSM_TetherModeAlive][TetherMaster] notifying tethered with iface =null 
+Tethering: isTetheringIpv6Support: true 
+Tethering: [MSM_Initial][TetherMaster] enter 
+Tethering: StateReceiver onReceive action:android.hardware.usb.action.USB_STATE 
+Tethering: StateReceiver onReceive action synchronized: usbConnected = false usbConfigured = false, mRndisEnabled = false, mUsbTetherRequested = false 
+Tethering: StateReceiver onReceive action synchronized: mUsbTetherEnabled = true 
+Tethering: isGeminiSupport: true 
+Tethering: updateConfiguration: wrong MCCMNC =null 
+Tethering: ifaceTypes = null, use default 
+Tethering: upstreamIfaceTypes.add:0 
+Tethering: upstreamIfaceTypes.add:1 
+Tethering: upstreamIfaceTypes.add:5 
+Tethering: upstreamIfaceTypes.add:7 
+Tethering: upstreamIfaceTypes.add:9 
+Tethering: upstreamIfaceTypes.add:49 
+Tethering: checkDunRequired:2 
+Tethering: mPreferredUpstreamMobileApn = 5 
+Tethering: isTetheringIpv6Support: true 
+Tethering: getIpv6FeatureEnable:0 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+Tethering: interfaceLinkStateChanged wlan0, true 
+Tethering: interfaceStatusChanged wlan0, true 
+zhangjie@android:~/log/6580/6580test/mobilelog/APLog_2016_0422_135951$ 
+

@@ -1,0 +1,28 @@
+1 、Settings----TetheringSettings.java 
+      mUsbRegexs = cm.getTetherableUsbRegexs();
+
+2、frameworks/base/services/core/java/com/android/server/connectivity/ConnectivityService.java
+mTetherableUsbRegexs
+    // TODO - proper iface API for selection by property, inspection, etc
+    public String[] getTetherableUsbRegexs() {
+        enforceTetherAccessPermission();
+        if (isTetheringSupported()) {
+            return mTethering.getTetherableUsbRegexs();
+        } else {
+            return new String[0];
+        }    
+    }    
+
+3、frameworks/base/services/core/java/com/android/server/  Tethering.java
+     // TODO - return copies so people can't tamper
+1016     public String[] getTetherableUsbRegexs() {
+1017         return mTetherableUsbRegexs;
+1018     }
+
+
+4、frameworks/base/core/res/res/values/config.xml
+
+   <string-array translatable="false" name="config_tether_usb_regexs">
+ 254         <item>"rndis\\d"</item>
+ 255     </string-array>
+

@@ -1,0 +1,26 @@
+
+zhangjie@android:~/log/6.0/2/test2/mobilelog/APLog_2016_0422_111716$ grep -nr UsbDeviceManager ./ |awk '{for(i=6;i<=NF;i++) printf"%s ",$i} {print ""}'
+UsbDeviceManager: USB UEVENT: {USB_STATE=DISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2497, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: USB UEVENT: {USB_STATE=HWDISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2498, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: false configured: false 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONNECTED, SUBSYSTEM=android_usb, SEQNUM=2520, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: true configured: false 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONFIGURED, SUBSYSTEM=android_usb, SEQNUM=2521, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: true configured: true 
+UsbDeviceManager: setCurrentFunctions(rndis) 
+UsbDeviceManager: setEnabledFunctions functions=rndis, forceRestart=false 
+UsbDeviceManager: applyAcmFunction - sys.usb.acm_idx=,mAcmPortIdx= 
+UsbDeviceManager: applyAcmFunction - functions: rndis,adb 
+UsbDeviceManager: Setting USB config to rndis,adb 
+UsbDeviceManager: setUsbConfig(none) 
+UsbDeviceManager: setUsbConfig(rndis,adb) 
+UsbDeviceManager: USB UEVENT: {USB_STATE=DISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2534, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONNECTED, SUBSYSTEM=android_usb, SEQNUM=2535, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: USB UEVENT: {USB_STATE=CONFIGURED, SUBSYSTEM=android_usb, SEQNUM=2536, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: true configured: false 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: true configured: true 
+UsbDeviceManager: USB UEVENT: {USB_STATE=DISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2545, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: USB UEVENT: {USB_STATE=HWDISCONNECTED, SUBSYSTEM=android_usb, SEQNUM=2546, ACTION=change, DEVPATH=/devices/virtual/android_usb/android0} 
+UsbDeviceManager: broadcasting Intent { act=android.hardware.usb.action.USB_STATE flg=0x30000000 (has extras) } connected: false configured: false 
+zhangjie@android:~/log/6.0/2/test2/mobilelog/APLog_2016_0422_111716$ 
+

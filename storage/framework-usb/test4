@@ -1,0 +1,70 @@
+
+zhangjie@android:~/log/6.0addlog/2/mobilelog$ grep -nr TetherSettings ./ |awk '{for(i=6;i<=NF;i++) printf"%s ",$i} {print ""}'
+ActivityThread: at com.android.settings.TetherSettings.initWifiTethering(TetherSettings.java:228) 
+ActivityThread: at com.android.settings.TetherSettings.onCreate(TetherSettings.java:193) 
+SubSettings: Launching fragment com.android.settings.TetherSettings 
+TetherSettingsExt: TetherSettingsExt 
+TetherSettingsExt: onCreate 
+TetherSettingsExt: jlink zhangjie usbRegexs.length======1mUsbTetherType==null 
+TetherSettings: mMassStorageActive = false 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: false, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: jlink 7777777 
+TetherSettings: jlink 999999999999999 updateUsbState- usbAvailable- mUsbHwDisconnected:false 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: jlink ------v TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: jlink 44444444 updateUsbState - mUsbTetherCheckEnable, mUsbTether checkbox setEnabled, and set unchecked 
+TetherSettingsExt: jlink updateUsbTypeListState....mUsbTerherType： null 
+TetherSettings: jlink 555555555 updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: false mUsbTetherCheckEnable: true 
+TetherSettings: btState = 10 
+TetherSettingsExt: jlink updateUsbTypeListState....mUsbTerherType： null 
+TetherSettings: onPreferenceTreeClick - setusbTethering(true) mUsbTethering: true 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: jlink mUsbUnTetherDone? :true , mUsbTetherDonel? :false , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: jlink 555555555 updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: jlink ------v TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: false, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: false, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: jlink 555555555 updateUsbState - usbAvailable - mUsbConfigured: false mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: jlink ------v TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: jlink 555555555 updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: jlink mUsbUnTetherDone? :true , mUsbTetherDonel? :false , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: jlink 555555555 updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: jlink mUsbUnTetherDone? :true , mUsbTetherDonel? :true , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink -------- s: rndis0 regex:rndis\d mUsbConnected:true 
+TetherSettings: jlink usbTethered.......................... 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : true usbErrored: false usbAvailable: true 
+TetherSettings: jlink 2222222 updateUsbState: usbTethered ! mUsbTether checkbox setEnabled & checked 
+TetherSettingsExt: jlink updateUsbTypeListState....mUsbTerherType： null 
+TetherSettings: jlink 3333333 updateUsbState - usbTethered - mUsbTetherCheckEnable: true 
+TetherSettings: btState = 10 
+TetherSettings: jlink ----v TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: jlink ------v TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: jlink -------- s: rndis0 regex:rndis\d mUsbConnected:false 
+TetherSettings: jlink usbTethered.......................... 
+TetherSettings: jlink 111111 updateUsbState - usbTethered : true usbErrored: false usbAvailable: false 
+TetherSettings: jlink 2222222 updateUsbState: usbTethered ! mUsbTether checkbox setEnabled & checked 
+TetherSettingsExt: jlink updateUsbTypeListState....mUsbTerherType： null 
+TetherSettings: jlink 3333333 updateUsbState - usbTethered - mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+zhangjie@android:~/log/6.0addlog/2/mobilelog$ 
+

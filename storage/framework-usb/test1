@@ -1,0 +1,83 @@
+
+zhangjie@android:~/log/6.0/2/test/mobilelog/APLog_2016_0422_111406$ grep -nr TetherSettings ./ |awk '{for(i=6;i<=NF;i++) printf"%s ",$i} {print ""}'
+SubSettings: Launching fragment com.android.settings.TetherSettings 
+TetherSettingsExt: TetherSettingsExt 
+TetherSettingsExt: onCreate 
+TetherSettings: mMassStorageActive = false 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: false, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState- usbAvailable- mUsbHwDisconnected:false 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState - mUsbTetherCheckEnable, mUsbTether checkbox setEnabled, and set unchecked 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: false mUsbTetherCheckEnable: true 
+TetherSettings: btState = 10 
+TetherSettings: onPreferenceTreeClick - setusbTethering(true) mUsbTethering: true 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :true , mUsbTetherDonel? :false , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: false, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: false, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: false mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :true , mUsbTetherDonel? :false , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: false, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState - usbAvailable - mUsbConfigured: true mUsbTethering: true mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :true , mUsbTetherDonel? :true , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: true, mUsbConfigured: true, mUsbHwDisconnected: false, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : true usbErrored: false usbAvailable: true 
+TetherSettings: updateUsbState: usbTethered ! mUsbTether checkbox setEnabled & checked 
+TetherSettings: updateUsbState - usbTethered - mUsbTetherCheckEnable: true 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: true, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : true usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState: usbTethered ! mUsbTether checkbox setEnabled & checked 
+TetherSettings: updateUsbState - usbTethered - mUsbTetherCheckEnable: false 
+TetherSettings: btState = 10 
+TetherSettings: onPreferenceTreeClick - setusbTethering(false) mUsbTethering: true 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :false , mUsbTetherDonel? :true , tether fail? :false 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: false, mUsbUnTetherDone: false, mUsbTetherDone: true, tetherfail: false, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState- usbAvailable- mUsbHwDisconnected:true 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :false , mUsbTetherDonel? :true , tether fail? :true 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: false, mUsbUnTetherDone: false, mUsbTetherDone: true, tetherfail: true, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState- usbAvailable- mUsbHwDisconnected:true 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.net.conn.TETHER_STATE_CHANGED 
+TetherSettings: mUsbUnTetherDone? :true , mUsbTetherDonel? :true , tether fail? :true 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: true, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState- usbAvailable- mUsbHwDisconnected:true 
+TetherSettings: btState = 10 
+TetherSettings: TetherChangeReceiver - onReceive, action is android.hardware.usb.action.USB_STATE 
+TetherSettings: TetherChangeReceiver - ACTION_USB_STATE mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true 
+TetherSettings: =======> updateState - mUsbConnected: false, mUsbConfigured: false, mUsbHwDisconnected: true, checked: false, mUsbUnTetherDone: true, mUsbTetherDone: true, tetherfail: true, mIsPcKnowMe: true 
+TetherSettings: updateUsbState - usbTethered : false usbErrored: false usbAvailable: false 
+TetherSettings: updateUsbState- usbAvailable- mUsbHwDisconnected:true 
+TetherSettings: btState = 10 
+zhangjie@android:~/log/6.0/2/test/mobilelog/APLog_2016_0422_111406$ 
+
