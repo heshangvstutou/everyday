@@ -1,0 +1,4 @@
+<< /proc/cmdline >>:
+console=tty0 console=ttyMT0,921600n1 root=/dev/ram vmalloc=496M androidboot.hardware=mt6735 slub_max_order=0 slub_debug=O bootopt=64S3,32N2,64N2 lcm=0-t109_samsung_dsi_lvds fps=6138 vram=14811136 androidboot.selinux=permissive hw_info=00000000000000000000 hw_detail_info=@-@hwVersion_identity=S109BA（V2.0)@lcd_identity=雅冠 800*1280 BOE玻璃（40PIN）@camera_identity=鑫宏光电 GC0310+ GC2755 AF@tp_identity=明光利TP-P+G\裕成光电TP-P+G@-@battery_identity=25*123*130mm 4600MAH@tp_ps_identity=NO@-@-@-@-@-@-@-@-@cpufreq_identity=NO@mem_size_identity=NO@cpu_cores_identity=NO@fplatform_identity=NO printk.disable_uart=1 bootprof.pl_t=3558 bootprof.lk_t=2628 boot_reason=4 androidboot.serialno=0123456789ABCDEF androidboot.bootreason=wdt_by_pass_pwk
+================ END of FILE ===============
+

@@ -1,0 +1,50 @@
+
+
+我们经常需要实用vim，查看代码，然后又要去查看另一个代码，就要切出去到另外一个目录。
+
+如果把这个vim关闭，再去开一个就会显得很麻烦。
+
+
+这里介绍一个很实用的方法：
+
+1.将vim置于后台，
+
+直接按 ctrl + z可以将当前的vim置于后台
+
+
+2.然后可以去别的目录再打开一个
+
+
+当你需要打开之前的vim的时候
+
+3.打jobs命令
+
+看当前有哪些vim在后台
+
+
+4.最后打fg 序号，将需要的vim置于前台
+
+
+实例：
+
+1. 在vim 中按下如下按键组合，将vim置于后台
+
+[html] view plain copy
+在CODE上查看代码片派生到我的代码片
+
+    ctrl + z  
+
+
+    2. 在命令中输入如下键，将需要的vim置于前台
+
+    [html] view plain copy
+    在CODE上查看代码片派生到我的代码片
+
+        @sw3-dev-1:~/android6.0/frameworks/base/services$ jobs  
+	    [1]+  Stopped                 vim Android.mk  (wd: ~/android6.0/frameworks/base)  
+        [2]-  Stopped                 vim Android.mk  
+	    @sw3-dev-1:~/android6.0/frameworks/base/services$ fg 1  
+	        vim Android.mk  (wd: ~/android6.0/frameworks/base)  
+
+
+
