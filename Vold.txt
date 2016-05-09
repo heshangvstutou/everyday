@@ -1,0 +1,70 @@
+
+zhangjie@android:~/src2/spr$ adb reboot
+zhangjie@android:~/src2/spr$ adb logcat |grep Vold
+- waiting for device -
+01-01 00:03:00.700   217   217 I vold    : Vold 3.0 (the awakening) firing up
+01-01 00:03:00.728   217   217 W Vold    : Tearing down stale mount /mnt/cd-rom
+01-01 00:03:00.799   217   241 I Vold    : handleBlockEvent(): For MTK_SHARED_SDCARD, remove EMMC disk
+01-01 00:03:00.816   217   241 I Vold    : Coldboot: sem_post() because all uevent has handled
+01-01 00:03:00.821   217   247 D VoldCryptCmdListener: cryptfs mountdefaultencrypted
+01-01 00:03:19.108   931   981 D VoldConnector: SND -> {1 asec list}
+01-01 00:03:19.109   217   246 D VoldCmdListener: asec list
+01-01 00:03:19.116   931   982 D VoldConnector: RCV <- {200 1 asec operation succeeded}
+01-01 00:03:19.116   931   981 D VoldConnector: RMV <- {200 1 asec operation succeeded}
+01-01 00:03:19.489   931   981 D VoldConnector: SND -> {2 asec list}
+01-01 00:03:19.489   217   246 D VoldCmdListener: asec list
+01-01 00:03:19.490   931   982 D VoldConnector: RCV <- {200 2 asec operation succeeded}
+01-01 00:03:19.490   931   981 D VoldConnector: RMV <- {200 2 asec operation succeeded}
+01-01 00:03:21.160   931   981 D VoldConnector: SND -> {3 volume reset}
+01-01 00:03:21.161   217   246 D VoldCmdListener: volume reset
+01-01 00:03:21.161   931   982 D VoldConnector: RCV <- {651 emulated 7}
+01-01 00:03:21.161   931   982 D VoldConnector: RCV <- {659 emulated}
+01-01 00:03:21.161   931   982 D VoldConnector: RCV <- {650 emulated 2 "" ""}
+01-01 00:03:21.161   931   982 D VoldConnector: RCV <- {651 emulated 0}
+01-01 00:03:21.161   931   982 D VoldConnector: RCV <- {200 3 Command succeeded}
+01-01 00:03:21.162   931   981 D VoldConnector: RMV <- {200 3 Command succeeded}
+01-01 00:03:21.162   931   981 D VoldConnector: SND -> {4 volume user_added 0 0}
+01-01 00:03:21.163   217   246 D VoldCmdListener: volume user_added 0 0
+01-01 00:03:21.163   931   982 D VoldConnector: RCV <- {200 4 Command succeeded}
+01-01 00:03:21.164   931   981 D VoldConnector: RMV <- {200 4 Command succeeded}
+01-01 00:03:21.173   931   981 D VoldConnector: SND -> {5 volume mount emulated 3 -1}
+01-01 00:03:21.174   217   246 D VoldCmdListener: volume mount emulated 3 -1
+01-01 00:03:21.174   931   982 D VoldConnector: RCV <- {651 emulated 1}
+01-01 00:03:21.174   931   982 D VoldConnector: RCV <- {656 emulated /data/media}
+01-01 00:03:21.174   931   982 D VoldConnector: RCV <- {655 emulated /storage/emulated}
+01-01 00:03:21.278   931   982 D VoldConnector: RCV <- {651 emulated 2}
+01-01 00:03:21.282   931   982 D VoldConnector: RCV <- {200 5 Command succeeded}
+01-01 00:03:21.282   931   981 D VoldConnector: RMV <- {200 5 Command succeeded}
+01-01 00:03:23.402   931   931 D VoldConnector: SND -> {6 volume user_started 0}
+01-01 00:03:23.403   217   246 D VoldCmdListener: volume user_started 0
+01-01 00:03:23.404   931   982 D VoldConnector: RCV <- {200 6 Command succeeded}
+01-01 00:03:23.404   931   931 D VoldConnector: RMV <- {200 6 Command succeeded}
+01-01 00:03:25.540   217   247 D VoldCryptCmdListener: cryptfs getpw
+01-01 00:03:25.542   217   247 D VoldCryptCmdListener: cryptfs clearpw
+01-01 00:05:09.090   931   982 D VoldConnector: RCV <- {640 disk:179,128 5}
+01-01 00:05:09.101   931   982 D VoldConnector: RCV <- {641 disk:179,128 2002780160}
+01-01 00:05:09.103   931   982 D VoldConnector: RCV <- {642 disk:179,128 Samsung}
+01-01 00:05:09.105   931   982 D VoldConnector: RCV <- {644 disk:179,128 /sys//devices/mtk-msdc.0/11240000.msdc1/mmc_host/mmc1/mmc1:0002/block/mmcblk1}
+01-01 00:05:09.144   931   982 D VoldConnector: RCV <- {650 public:179,129 0 "disk:179,128" ""}
+01-01 00:05:09.144   931   982 D VoldConnector: RCV <- {651 public:179,129 0}
+01-01 00:05:09.144   931   982 D VoldConnector: RCV <- {643 disk:179,128}
+01-01 00:05:09.149   931   981 D VoldConnector: SND -> {7 volume mount public:179,129 2 0}
+01-01 00:05:09.149   217   246 D VoldCmdListener: volume mount public:179,129 2 0
+01-01 00:05:09.151   931   982 D VoldConnector: RCV <- {651 public:179,129 1}
+01-01 00:05:09.218   931   982 D VoldConnector: RCV <- {652 public:179,129 vfat}
+01-01 00:05:09.218   931   982 D VoldConnector: RCV <- {653 public:179,129 BCA4-18FB}
+01-01 00:05:09.219   931   982 D VoldConnector: RCV <- {654 public:179,129 }
+01-01 00:05:09.846   217   246 I Vold    : Filesystem check completed OK
+01-01 00:05:09.846   931   982 D VoldConnector: RCV <- {656 public:179,129 /mnt/media_rw/BCA4-18FB}
+01-01 00:05:09.847   931   982 D VoldConnector: RCV <- {655 public:179,129 /storage/BCA4-18FB}
+01-01 00:05:09.917   931   982 D VoldConnector: RCV <- {651 public:179,129 2}
+01-01 00:05:09.918   931   982 D VoldConnector: RCV <- {200 7 Command succeeded}
+01-01 00:05:09.918   931   981 D VoldConnector: RMV <- {200 7 Command succeeded}
+01-01 00:05:09.919   931   981 E VoldConnector: NDC Command {7 volume mount public:179,129 2 0} took too long (770ms)
+01-01 00:05:24.241   931   982 D VoldConnector: RCV <- {651 public:179,129 5}
+01-01 00:05:24.456   931   982 D VoldConnector: RCV <- {651 public:179,129 0}
+01-01 00:05:24.461   931   982 D VoldConnector: RCV <- {651 public:179,129 8}
+01-01 00:05:24.462   931   982 D VoldConnector: RCV <- {659 public:179,129}
+01-01 00:05:24.462   931   982 D VoldConnector: RCV <- {649 disk:179,128}
+zhangjie@android:~/src2/spr$ 
+
